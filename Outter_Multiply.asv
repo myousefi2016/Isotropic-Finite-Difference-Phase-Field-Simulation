@@ -1,0 +1,8 @@
+function Outter_Multiply=Outter_Multiply(struct Vector V1,struct Vector V2)
+{
+	float M;
+
+	M = V1.X * V2.Y - V1.Y * V2.X;
+
+	return M;
+}

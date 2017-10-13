@@ -1,0 +1,11 @@
+function Laplacian=Laplacian(Mat,X,Y,Mesh_X,Mesh_Y,MeshX,MeshY)
+
+	%LaplacianX=(1.0/12.0)*((*(Mat+(X+Mesh_X)*WidthX+Y+Mesh_Y)-2*(*(Mat+(X)*WidthX+Y+Mesh_Y))+*(Mat+(X-Mesh_X)*WidthX+Y+Mesh_Y))+10*(*(Mat+(X+Mesh_X)*WidthX+Y)-2*(*(Mat+(X)*WidthX+Y))+*(Mat+(X-Mesh_X)*WidthX+Y))+(*(Mat+(X+Mesh_X)*WidthX+Y-Mesh_Y)-2*(*(Mat+(X)*WidthX+Y-Mesh_Y))+*(Mat+(X-Mesh_X)*WidthX+Y-Mesh_Y)));
+	%LaplacianY=(1.0/12.0)*((*(Mat+(X+Mesh_X)*WidthX+Y+Mesh_Y)-2*(*(Mat+(X+Mesh_X)*WidthX+Y))+*(Mat+(X+Mesh_X)*WidthX+Y-Mesh_Y))+10*(*(Mat+(X)*WidthX+Y+Mesh_Y)-2*(*(Mat+(X)*WidthX+Y))+*(Mat+(X)*WidthX+Y-Mesh_Y))+(*(Mat+(X-Mesh_X)*WidthX+Y+Mesh_Y)-2*(*(Mat+(X-Mesh_X)*WidthX+Y))+*(Mat+(X-Mesh_X)*WidthX+Y-Mesh_Y)));
+    
+    LaplacianX=(1.0/12.0)*(Mat(X+Mesh_X,Y+Mesh_Y)-2*Mat(X,Y+Mesh_Y)+Mat(X-Mesh_X,Y+Mesh_Y)+10*Mat(X+Mesh_X,Y)-2*Mat(X,Y)+Mat(X-Mesh_X,Y)+Mat(X+Mesh_X,Y-Mesh_Y)-2*Mat(X,Y-Mesh_Y)+Mat(X-Mesh_X,Y-Mesh_Y));
+    LaplacianY=(1.0/12.0)*(Mat(
+
+	Laplacian=(LaplacianX/(pow(MeshX,2)))+(LaplacianY/(pow(MeshY,2)));
+
+end

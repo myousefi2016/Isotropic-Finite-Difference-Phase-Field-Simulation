@@ -1,0 +1,12 @@
+function Divergence=Divergence(Mat,X,Y,Mesh_X,Mesh_Y,MeshX,MeshY,WidthX,HeightY)
+
+	%DivergenceX=(1.0/12.0)*((((Mat+(X+Mesh_X)*WidthX+Y+Mesh_Y)->X)-((Mat+(X-Mesh_X)*WidthX+Y+Mesh_Y)->X))+4*(((Mat+(X+Mesh_X)*WidthX+Y)->X)-((Mat+(X-Mesh_X)*WidthX+Y)->X))+(((Mat+(X+Mesh_X)*WidthX+Y-Mesh_Y)->X)-((Mat+(X-Mesh_X)*WidthX+Y-Mesh_Y)->X)));
+	%DivergenceY=(1.0/12.0)*((((Mat+(X+Mesh_X)*WidthX+Y+Mesh_Y)->Y)-((Mat+(X+Mesh_X)*WidthX+Y-Mesh_Y)->Y))+4*(((Mat+(X)*WidthX+Y+Mesh_Y)->Y)-((Mat+(X)*WidthX+Y-Mesh_Y)->Y))+(((Mat+(X-Mesh_X)*WidthX+Y+Mesh_Y)->Y)-((Mat+(X-Mesh_X)*WidthX+Y-Mesh_Y)->Y)));
+    
+    DivergenceX=(1.0/12.0)*(Mat(X+Mesh_X,Y+Mesh_Y).X-Mat(X-Mesh_X,Y+Mesh_Y).X+4*Mat(X+Mesh);
+
+	Divergence_1=(DivergenceX/MeshX)+(DivergenceY/MeshY);
+
+Divergence=Divergence_1;
+
+end

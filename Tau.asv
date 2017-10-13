@@ -1,0 +1,9 @@
+function Tau=Tau(Theta,epsilon,int k,float tau0)
+{
+	float DTau;
+	float f_A(float,float,int);
+
+	DTau=tau0 * (pow((1 + epsilon *cos(k * Theta)),2));
+
+	return DTau;
+}
